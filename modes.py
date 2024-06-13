@@ -1,0 +1,63 @@
+import os
+from commands import *
+from ui import *
+from colorama import *
+
+loading_complete = False  # Global flag to control loading animation
+
+def single_anonymous_ftp_login(scan_type):
+    if scan_type == 1:
+        print(Fore.BLUE + scan_single_art_ip)
+        print(Fore.LIGHTYELLOW_EX + ip_message_alert)
+        target = input("Insert IP Address: ")
+        loading_thread = start_loading_animation()
+        anonLog(target)
+        stop_loading_animation(loading_thread)
+    elif scan_type == 2:
+        print(Fore.LIGHTMAGENTA_EX + scan_single_art_domain)
+        print(Fore.LIGHTYELLOW_EX + domain_message_alert)
+        domain = input("Insert Domain Address: ")
+        loading_thread = start_loading_animation()
+        target = domainToIp(domain)
+        anonLog(target)
+        stop_loading_animation(loading_thread)
+
+
+def multiple_anonymous_ftp_logins(scan_type):
+    if scan_type == 1:
+        path = 'lists/ip/'
+        print(Fore.BLUE + scan_multiple_art_ip)
+        print(Fore.LIGHTYELLOW_EX + ip_message_alert)
+        filename = input(Fore.LIGHTWHITE_EX + "Insert the name of the file containing IP addresses: ")
+        file_path = os.path.join(path, filename)
+        if os.path.isfile(file_path):
+            print("found_file")
+            with open(file_path, 'r') as file:
+                for line in file:
+                    target = line.strip()
+                    print(Fore.LIGHTYELLOW_EX + f"[+] {target} try...")
+                    loading_thread = start_loading_animation()
+                    anonLog(target)
+            stop_loading_animation(loading_thread)
+        else:
+            print(Fore.LIGHTRED_EX + f"File '{file_path}' does not exist.")
+            input(Fore.LIGHTWHITE_EX + 'Press any key to Restart')
+    elif scan_type == 2:
+        path = 'lists/domains/'
+        print(Fore.LIGHTMAGENTA_EX + scan_multiple_art_domain)
+        print(Fore.LIGHTYELLOW_EX + domain_message_alert)
+        filename = input(Fore.LIGHTWHITE_EX + "Insert the name of the file containing Domains: ")
+        file_path = os.path.join(path, filename)
+        if os.path.isfile(file_path):
+            print("found_file")
+            with open(file_path, 'r') as file:
+                for line in file:
+                    domain = line.strip()
+                    target = domainToIp(domain)
+                    print(Fore.LIGHTYELLOW_EX + f"[+] {domain} - {target} try...")
+                    loading_thread = start_loading_animation()
+                    anonLog(target)
+            stop_loading_animation(loading_thread)
+        else:
+            print(Fore.LIGHTRED_EX + f"File '{file_path}' does not exist.")
+            input(Fore.LIGHTWHITE_EX + 'Press any key to Restart')
