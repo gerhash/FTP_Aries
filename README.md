@@ -1,5 +1,5 @@
 
-<img src="https://github.com/gerhash/Wlan-Hound-Wi-Fi-Sniffer/assets/62940515/c347a95c-0eb1-48ad-a04c-a668e54baaf6" alt="WlanHound" width="700" height="500">
+<img src="" alt="WlanHound" width="700" height="500">
 
 # FTP Aries - Check Anonymous Login Bruteforce FTP
 <img src="https://skillicons.dev/icons?i=py" alt="Skills" />
