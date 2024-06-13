@@ -1,3 +1,4 @@
+#UI ANIMATION AND GRAPHICS
 import time
 import threading
 from colorama import *
@@ -215,23 +216,26 @@ def clear_screen():
 loading_complete = False  # Global flag to control loading animation
 
 def loading():
-    animation = "|/-\\"
-    idx = 0
-    while not loading_complete:
+    animation = "|/-\\"  # Characters for the loading animation
+    idx = 0  # Index to track current animation character
+    while not loading_complete:  # Loop until loading_complete is True
+        # Print loading animation in Cyan color, overwrite the current line (Carriage return \r),
+        # and flush to ensure immediate display
         print(Fore.CYAN + "\r" + "Loading... " + animation[idx % len(animation)], end="", flush=True)
-        idx += 1
-        time.sleep(0.1)
+        idx += 1  # Move to the next animation character
+        time.sleep(0.1)  # Pause for a short time to control animation speed
     # Clear the loading line after completion
     print("\r" + " " * (len("Loading... ") + 1 + len(animation)), end="", flush=True)
 
+#I did this because the animation loop forever if i dont use threads
 def start_loading_animation():
-    global loading_complete
-    loading_complete = False
-    loading_thread = threading.Thread(target=loading)
-    loading_thread.start()
-    return loading_thread
+    global loading_complete  # Access global variable loading_complete
+    loading_complete = False  # Set loading_complete to False to start animation
+    loading_thread = threading.Thread(target=loading)  # Create a new thread for the loading animation
+    loading_thread.start()  # Start the thread
+    return loading_thread  # Return the thread object to the caller
 
 def stop_loading_animation(loading_thread):
-    global loading_complete
-    loading_complete = True
-    loading_thread.join()
+    global loading_complete  # Access global variable loading_complete
+    loading_complete = True  # Set loading_complete to True to stop the animation loop
+    loading_thread.join()  # Wait for the loading thread to complete
