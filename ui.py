@@ -32,7 +32,7 @@ start_menu = r'''
                  / __/   / / / ____/   / ___ |/ _, _// // /___ ___/ / 
                 /_/     /_/ /_/       /_/  |_/_/ |_/___/_____//____/  
                 
-                www.githublink.com                           by G#sh  
+    https://github.com/gerhash/FTP_Aries                           by G#sh  
                                                             
 Tool to find out if it is possible to access certain hosts with anonymous FTP, also using Lists   
 '''
