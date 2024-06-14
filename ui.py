@@ -179,7 +179,8 @@ main_menu = r'''
 
 [1] Single Anonymous FTP Login | Single target
 [2] Multiple Anonymous FTP Login | Multiple target
-[3] Exit
+[3] Domain to Ip | Use a domain list and found them IP's in a list.txt
+[0] Exit
 '''
 
 
@@ -188,7 +189,7 @@ scan_choice = r'''
 
 [1] IP Scan | Attempt with IP
 [2] Domain Scan |  Attempt with DOMAIN
-[3] Exit
+[0] Exit
 '''
 
 exiting = r'''
@@ -208,6 +209,34 @@ found_file = r'''
 [+] File Found...
 '''
 
+domain_to_ip_ui = r'''
+                                        ,---.
+                                       /    |
+                                      /     |
+                                     /      |
+                                    /       |
+                               ___,'        |
+                             <  -'          :
+                              `-.__..--'``-,_\_
+                                 |o/ ` :,.)_`>
+                                 :/ `     ||/)
+                                 (_.).__,-` |\
+                                 /( `.``   `| :
+                                 \'`-.)  `  ; ;
+                                 | `       /-<
+                                 |     `  /   `.
+                 ,-_-..____     /|  `    :__..-'\
+                /,'-.__\\  ``-./ :`      ;       \
+                `\ `\  `\\  \ :  (   `  /  ,   `. \
+                  \` \   \\   |  | `   :  :     .\ \
+                   \ `\_  ))  :  ;     |  |      ): :
+                  (`-.-'\ ||  |\ \   ` ;  ;       | |
+                   \-_   `;;._   ( `  /  /_       | |
+                    `-.-.// ,'`-._\__/_,'         ; |
+                       \:: :     /     `     ,   /  |
+                        || |    (        ,' /   /   |
+                            DOMAIN TO IP LIST
+'''
 
 #ANIMATIONS
 

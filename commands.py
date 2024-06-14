@@ -4,7 +4,8 @@ import ftplib #lib useful for Connect via FTP and handle responses
 import socket #lib used for check ip addresses of domains
 from ui import * #ui design
 from colorama import * #colors
-from modes import * # function modules
+from datetime import datetime
+
 
 #this function Check if you can Log anonymous FTP
 def anonLog(hostname):
@@ -27,13 +28,21 @@ def domainToIp(domain):
         print(Fore.LIGHTRED_EX + f"IP Find Error for {domain}: {e}") #fail
 
 
-#handle user choices
-def command(quantity, scan_type):
-    if quantity == 1:
-        single_anonymous_ftp_login(scan_type)
-        input(Fore.LIGHTWHITE_EX + 'Press any key to Restart')
 
-    elif quantity == 2:
-        multiple_anonymous_ftp_logins(scan_type)
-        input(Fore.LIGHTWHITE_EX + 'Press any key to Restart')
+def scan_type_selector():
+    print(Fore.GREEN + scan_art)
+    print(Fore.LIGHTWHITE_EX + scan_choice)
+    scan_type = int(input(Fore.CYAN + "Choose an Option: "))
+    # exit option
+    if scan_type == 0:
+        clear_screen()
+        message = Fore.RED + exiting
+        return message
+    return int(scan_type)
 
+
+
+def get_current_datetime_string():
+    now = datetime.now()
+    formatted_datetime = now.strftime("%Y-%m-%d_%H-%M-%S")
+    return formatted_datetime
