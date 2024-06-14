@@ -44,10 +44,19 @@ However, using anonymous login can expose vulnerabilities in the server, so it's
 
 
 ## Releases
+
+#### v1.1
+-  Domain List to IP, transform all domains into txt file in ip list
+-  
+<img src="https://github.com/gerhash/FTP_Aries/assets/62940515/c8e63e24-7e80-41d2-aff0-aabaad309d50" alt="multiple" width="500" height="400" >
+
+
 #### v1.0
 -  Single IP or Domain
 -  Multiple IP or Domain with Lists 
 
-<img src="https://github.com/gerhash/FTP_Aries/assets/62940515/225e3503-1cea-4d7f-a6cd-045d693b074c" alt="multiple" width="500" height="500" >
+<img src="https://github.com/gerhash/FTP_Aries/assets/62940515/225e3503-1cea-4d7f-a6cd-045d693b074c" alt="single" width="500" height="500" >
 <img src="https://github.com/gerhash/FTP_Aries/assets/62940515/b7a39f73-e190-4264-886b-a08f78da70a7" alt="multiple" width="500" height="400" >
+
+
 
